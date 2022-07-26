@@ -10,11 +10,13 @@ public class Ques_113 {
         int temp2[] = new int[26];
         for (int i=0;i<first.length();i++){
             char ch = first.charAt(i);
-            temp1[ch-97]++;
+            if (ch>='a' && ch<='z') temp1[ch-97]++;
+            else if(ch>='A' && ch<='Z') temp1[ch-65]++;
         }
         for (int i=0;i<second.length();i++){
-            char c = second.charAt(i);
-            temp2[c-97]++;
+            char ch = second.charAt(i);
+            if (ch>='a' && ch<='z') temp2[ch-97]++;
+            else if(ch>='A' && ch<='Z') temp2[ch-65]++;
         }
         if (Arrays.equals(temp1,temp2)) System.out.println("anagram");
         else System.out.println("not anagram");
