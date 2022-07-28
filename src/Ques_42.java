@@ -5,9 +5,10 @@ public class Ques_42 {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
         boolean isPrime = true;
-        if (n<=1 || n%2==0) isPrime = false;
-        if (n==2) isPrime = true;
-        for (int i=3;i<=Math.sqrt(n);i+=2){
+        if (n<=1) isPrime = false;
+        else if (n==2) isPrime = true;
+        else if(n%2==0) isPrime = false;
+        else for (int i=3;i<=Math.sqrt(n);i+=2){
             if (n%i==0) {
                 isPrime = false;
                 break;
